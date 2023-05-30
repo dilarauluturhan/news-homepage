@@ -46,7 +46,6 @@ p {
 .header nav {
     opacity: 0;
     z-index: -999;
-    transition: all 0.3s ease-in-out;
 }
 
 .header nav #menu-close {
@@ -55,6 +54,7 @@ p {
     outline: none;
     position: absolute;
     right: 1.25rem;
+    top: 1.25rem;
     z-index: 99999;
     cursor: pointer;
 }
@@ -87,6 +87,11 @@ p {
 .header nav ul li {
     margin: 1.5rem 0;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.header nav ul li:hover {
+    color: var(--soft-orange);
 }
 
 .section {
@@ -198,6 +203,40 @@ p {
 @media (min-width: 1024px) {
     .header {
         padding: 2rem 1.25rem;
+    }
+
+    .header nav {
+        opacity: 1;
+        z-index: auto;
+        width: 100%;
+    }
+
+    .header nav.open {
+        position: relative;
+        right: 0;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        z-index: auto;
+        color: var(--dark-grayish-blue);
+    }
+
+    .header nav #menu-close {
+        display: none;
+    }
+
+    .header nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+        position: relative;
+        top: 0;
+        transform: translateY(0);
+    }
+
+    .header nav ul li {
+        margin: 0;
     }
 
     .header .menu-btn button {
